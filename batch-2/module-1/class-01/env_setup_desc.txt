@@ -1,0 +1,16 @@
+==================Different type of PHP code run process=====================
+-----------01 Terminal-----------
+>>> php code কে xampp এর মধ্যে run করাতে হবে এর কোন বাধ্য বাধকতা নেই। সরাররি desktop এ
+file create করেও termial এর মাধ্যমেও code run করানো যায়।
+terminal এ  cmd>> php file_name.php লিখে command দিলেই  output দেখাবে।
+
+----------02 Server------------
+>>> php code কে server এর মাধ্যমেও run করানো যায় xampp এর মধ্যে file না create করেও।
+terminal এ cmd>> php -S 127.0.0.1:8000 file_name.php লিখে command দিলেই temporary server
+start হয়ে যাবে। তখন 127.0.0.1:8000 link তা copy করে browser এ run করলেই output আসবে। 
+
+----------03 PHP server extension------------
+>>> vs code এ php এর জন্য একটি extension রয়েছে php server নামে। এই extension টি
+install দিয়ে code এর যে কোনও যায়গায় mouse এর right button click করে PHP server:server project
+এ click করলে সয়ংক্রিয় ভাবে browser এ output দেখাবে। আবার PHP server:server stop এ click করলে
+server off হয়ে যাবে। 
