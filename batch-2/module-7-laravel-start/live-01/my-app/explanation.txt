@@ -1,0 +1,36 @@
+01. ====vite.config.js====
+এই ফাইল এর কাজ হলো;অনেক সময় আমরা প্রজেক্ট এর মধ্যে view.js or react.js ব্যবহার করি font end এর জন্য সেই js ফাইল গুলোকে নতুন করে যাতে configre 
+করতে না হয় তাই আগে থেকেই configure করা আছে।
+
+02.====README.md====
+Laravel file এর পরিচিতি।
+
+03.====phpunit.xml====
+এটি একটি system auto generated file
+
+04. ==== package.json====
+এটি একটি system auto generated file যা js এর বিভিন্ন package manage করতে কাজ করে। 
+
+06.====composer.lock/composer.json====
+এটি একটি system auto generated file. এখানে laravel project এর definition দেওয়া আছে। 
+
+07. ====artisan====
+এটি একটি system auto generated file.
+
+08. ====.gitignore====
+এই ফাইলের কাজ হলো আমরা যখন project github এ push করি তখন কিছু অপ্রয়জনিয় ফাইলকে puah হতে না দিয়ে আটকে দেওয়া। এবং কোন
+কোন file কে ignore করবে তা file এর মধ্যেই বলা আছে। 
+
+09.====gitattributes====
+এটি একটি system auto generated file.
+
+10. ====.env & .env.example====
+application এর বিভিন্ন constant credential গুলো এখানে লিখে রাখা হয়। যেমনঃ Database er configuration, API configuration,
+Email configuration ect. এবং কখনো যদি .env file delete যায় তাহলে .env.example থেকে configuration গুলো copy করে
+ব্যবহার করা যায়।
+
+11. ====vendor====
+এটি একটি system auto generated folder. Laravel এর জন্য PHP এর যত package রয়েছে তার সব গুলোই এই vendor folder এর মধ্যে
+generate হয়ে থাকে। এমনকি এই folder delete করে দিলেও composer install command দিলে এই folder আবার install হয়ে যায়।
+
+12. ====tests====
