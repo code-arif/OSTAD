@@ -1,0 +1,78 @@
+==========PRE-RECORDED=========
+
+MySQL available column types
+----------------------------
+1.bigincrements() -> UNSIGNED BIGINT(peimary key) equivalent
+2.bigInteger() -> BIGINT
+3.binay() -> BLOB(Binary Large Object)
+4.boolean() -> tinyint()/BOOLEAN ('YES', 'NO')
+5.char() -> CHAR
+6.dateTime() -> DATETIME
+7.date() -> DATE
+8.double() -> DOUBLE
+9.enum() -> ENUM (optional)
+10.float() -> FLOAT / Double
+11.foreignId() -> UNSIGNED BIGINT
+12.foreignIdFor() -> BIGINT
+13.geometryCollection() -> GEOMETRYCOLLECTION
+14.geometry() -> GEOMETRY
+15.id() -> bigIncrements
+16.increments() -> UNSIGNED INTEGER
+17.ipAddress() -> VARCHAR
+18.json() -> JSON / longtext
+19.longText() -> LONGTEXT
+20.mediumincrements() -> UNSIGNED MEDIUMINT (Equvalent as a primary key)
+21.mediuminteger() -> MEDIUMINT
+22.medium text() -> MEDIUMTEXT
+23.smallincrements() -> UNSIGNED SMALLINT (Equvalent as a primary key)
+24.string() -> VARCHAR(size require)
+25.text() -> TEXT
+26.time() -> TIME
+27.timestamp() -> TIMESTAMP
+28.timestamps() -> created_at and updated_at (AUTO GENERATED COLUMN)
+29.tinyincrements() -> TINYINT
+30.tinyinteger() -> TINYINT
+31.tinytext -> TINYTEXT
+32.unsignedBiginteger() -> UNSIGNED BIGINT
+33.unsignedInteger() -> INTEGER
+34.unsignedMediuminteger() -> UNSIGNED MEDIUMINT
+35.unsignedSmallinteger() -> UNSIGNED SMALLINT
+36.unsignedTinyinteger() -> UNSIGNED TINYINT
+37.smallInteger() -> smallint
+-------------------------------------------
+
+>> php artisan migrate:reset command use করে আমরা সকল migration কে reset করতে পারি।
+
+---->>>AVAILABLE COLUMN ATTRIBUTES<<<----
+01.nullable() -> Accept null value
+02.default($value) -> Aoutomaically set default value if user do not input any value
+03.useCurrent() -> Set TIMESTAMP column to use CURRENT_TIMESTAMP as default value. অর্থাৎ যখনি ওই ফিল্ডে ডাটা insert হবে Database ঠিক ওই time কে lock করবে।
+04.useCurrentOnUpdate() -> এই attribute এর জন্য যদি data update করা হয় তাহলে Database ওই update এর time কে lock করবে। তবে  useCurrent()->useCurrentOnUpdate() একসাথে ব্যবহার করতে হবে। 
+05.collation() -> Specify a collation for the cloumn
+06.charset() -> Specify a character set of the column(MySQL)
+07.autoIncrement() -> Set INTEGER column as auto-incrementing(primary key)
+08.first() -> Place the column "first" in the table(MySQL) অর্থাৎ এই method use করলে migration command দিলে এই column সবার উপরে অবস্থান করবে।
+09.invisible() -> Make the column "invisible" to SELECT* quearis (MySQL) অর্থাৎ SELECT* queary চলালে এই cloumn এর data display হবে না। তবে invisible() method use করলে defalult() attribute টা use করতে হয়। 
+10.unsigned() -> Set INTEGER column as UNSIGNED(MySQL)
+11.unique() -> Ensure unique value
+12.change() -> Allows you to modify the type and attributes of existing columns
+-----------------------------------------------------------------------------------
+
+---->>>>>>>RENAME TABLE AND DROP TABLE <<<<<<<---------
+>> table এর নাম পরিবর্তন করার জন্য terminal এ php artisan make:migration rename_exist table name লিখে run করলেই হবে। rename_ এর পর শুধু যে table এর নাম পরিবর্তন করতে হবে সেই table এর নাম লিখলেই হবে। 
+>> এর পর rename করা ফাইলে  Schema::rename('exist file name','new file name'); code টা লিখে migration run করতে হবে।
+
+---->>>>DROP OR DELETE TABLE<<<<----
+>>table drop or delete করার জন্য terminal এ php aritsan make:migration drop_tableName_table লিখে run করলে drop_tableName_table.php নামে একটা ফাইল তৈরি হবে। এরপর সেই ফাইলে গিয়ে up() method এর মধ্যে 
+Schema::dropIfExists('tableName'); code টা লিখে migrate command run করলেই table database থেকে delete হয়ে যাবে। dropIfExists এর পরিবর্তে drop ও ব্যবহার করা যায় কিন্তু dorpIfExist ব্যবহারের সুবিধা হলো table যদি Database এ exist করে তবেই delete হবে।
+
+---->>>>ADD NEW COLUMN INTO EXISTING TABLE<<<<----
+কোনো টাবিলের মধ্যে কোনো নতুন column add করতে চাইলে terminal এ php artisan make:migration add_column_to_tableName এই command run করলে add_column_to_tableName.php নামে একটি ফাইল তৈরি হবে। এখনে tableName হলো যে টেবিলের মধ্যে নতুন column add করা প্রয়োজন সেই table এর নাম দিতে হবে। এর পর add_column_to_tableName.php ফাইলের up() method এর table function এর মধ্যে 
+$table->after('columnName'function(Blueprint $table){
+	$table->string('name');
+	$table->string('phone');
+}); code লিখে migrate command দিলে name & phone column দুটি database এ থাকে টেবিলের মধ্যে add হয়ে যাবে।
+এখানে after হলো কোন cloumn এর পর নতুন column গুলো add হবে।
+
+---->>>>RENAME COLUMN INTO EXISTING TABLE<<<<----
+কোনো টেবিলের যেকোনো column এর নাম পরিবর্তন করতে চাইলে terminal এ php artisan make:migration rename_column_to_tableName লিখে run করলে rename_column_to_tableName.php নামে একটি ফাইল তৈরি হবে। এবার সেই ফাইলের up() method এর মধ্যে $table->renameColumn('newColumnName','OldColumnName'); লিখে migrate run করলে column এর নাম পরিবর্তন হয়ে যাবে। তবে শর্ত হলোঃ যদি LARAVEL এর নিয়ম অনুসারে MySQL এর version 8.0.3 এর নিচে হয় তাহলে composer এর মাধ্যমে doctrine/dbal install করতে হবে। সেক্ষেত্রে project এর মধ্যে terminal command: composer require doctrine/dbal লিখে run করলেই install হয়ে যাবে।
