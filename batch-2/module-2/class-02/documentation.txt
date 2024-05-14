@@ -1,0 +1,3 @@
+--variable scope (interview question)
+--parameter vs argument (interview question)
+--call back function

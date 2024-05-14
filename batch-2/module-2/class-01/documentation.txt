@@ -1,0 +1,11 @@
+=====================function==================
+--user define function
+--built-in function
+--function parameter/params
+--function default parameter value->single/multiple/all
+--function parameter data type hinting
+--php strict mood
+
+
+
+=====================Loop======================
