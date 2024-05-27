@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('data',[InvoiceController::class,'getData']);
+Route::get('/invoice/{id}',[InvoiceController::class,'invoice']);
