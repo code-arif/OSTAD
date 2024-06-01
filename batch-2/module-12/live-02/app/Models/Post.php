@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InvoiceItem extends Model
+class Post extends Model
 {
     use HasFactory;
-    public function invoice(){
-        return $this->belongsTo(Invoice::class);
-    }
+    protected $attributes = [
+        'title' => "this is my post",
+    ];
 }
