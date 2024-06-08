@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Middleware\tokenVirificaiton;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -12,7 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except:[
-            'http://localhost:8000/registration',
+            'http://localhost:8000/register',
+            'http://localhost:8000/userLogin',
+        ]);
+
+        $middleware->alias([
+            'tokenVerify' => tokenVirificaiton::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

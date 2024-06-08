@@ -21,26 +21,47 @@
 
 
 <script>
-    async function Save() {
+    // async function Save() {
 
+    //     let email = document.getElementById('email').value;
+    //     let password = document.getElementById('password').value;
+
+    //     let PostObj = {
+    //         "email": email,
+    //         "password": password
+    //     }
+
+    //     showLoader();
+    //     let res = await axios.post("/userLogin", PostObj)
+    //     hideLoader();
+
+    //     if (res.data['status'] === "success") {
+    //         alert(res.data['message']);
+    //         window.location.href = "/Profile";
+    //     } else {
+    //         alert(res.data['message'])
+    //     }
+
+    // }
+
+    async function Save() {
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
 
         let PostObj = {
-            "email": email,
-            "password": password
+            'email' : email,
+            'password' : password
         }
 
         showLoader();
-        let res = await axios.post("/userLogin", PostObj)
+        let res = await axios.post('/userLogin', PostObj);
         hideLoader();
 
-        if (res.data['status'] === "success") {
+        if (res.data['status'] === 'success') {
             alert(res.data['message']);
-            window.location.href = "/Profile";
+            window.location.href = '/profile';
         } else {
-            alert(res.data['message'])
+            alert(res.data['message']);
         }
-
     }
 </script>

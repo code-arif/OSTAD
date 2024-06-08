@@ -47,12 +47,39 @@
 
 
 <script>
-    async function Save() {
+    // async function Save() {
 
+    //     let firstName = document.getElementById('firstName').value;
+    //     let lastName = document.getElementById('lastName').value;
+    //     let email = document.getElementById('email').value;
+    //     let mobile = document.getElementById('mobile').value;
+    //     let password = document.getElementById('password').value;
+
+    //     let PostObj = {
+    //         "firstName": firstName,
+    //         "lastName": lastName,
+    //         "email": email,
+    //         "mobile": mobile,
+    //         "password": password
+    //     }
+
+    //     showLoader();
+    //     let res = await axios.post("/userRegistration", PostObj)
+    //     hideLoader();
+
+    //     if (res.data['status'] === "success") {
+    //         alert(res.data['message']);
+    //         window.location.href = "/Login";
+    //     } else {
+    //         alert(res.data['message'])
+    //     }
+
+    // }
+    async function Save() {
         let firstName = document.getElementById('firstName').value;
         let lastName = document.getElementById('lastName').value;
-        let email = document.getElementById('email').value;
         let mobile = document.getElementById('mobile').value;
+        let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
 
         let PostObj = {
@@ -64,15 +91,14 @@
         }
 
         showLoader();
-        let res = await axios.post("/userRegistration", PostObj)
+        let res = await axios.post('/register', PostObj);
         hideLoader();
 
-        if (res.data['status'] === "success") {
+        if(res.data['status'] === 'success'){
             alert(res.data['message']);
-            window.location.href = "/Login";
-        } else {
-            alert(res.data['message'])
+            window.location.href = '/login'
+        }else{
+            alert(res.data['message']);
         }
-
     }
 </script>
