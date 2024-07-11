@@ -18,5 +18,3 @@ if($score >= 80){
     echo 'fail';
 }
 
-
-?>
