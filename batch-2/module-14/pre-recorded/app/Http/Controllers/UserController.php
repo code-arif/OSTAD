@@ -129,7 +129,38 @@ class UserController extends Controller
         }
     }
 
-    //verify otp
+
+    // //verify otp
+    // public function VerifyOTP(Request $request)
+    // {
+    //     $email = $request->input('email');
+    //     $otp = $request->input('otp');
+    //     $count = User::where('email', '=', $email)->where('otp', '=', $otp)->count();
+
+    //     if ($count === 1) {
+    //         //database otp update
+    //         User::where('email', '=', $email)->update(['otp' => '0']);
+    //         //password reset token issue
+    //         $token = JWTToken::PassResetToken($request->input('email'));
+    //         return response()
+    //             ->json(
+    //                 [
+    //                     'status' => 'success',
+    //                     'message' => 'OTP varification Successfull',
+    //                 ],
+    //                 200,
+    //             )
+    //             ->cookie('token', $token, 60 * 24 * 30);
+    //     } else {
+    //         return response()->json(
+    //             [
+    //                 'message' => 'OTP does not exist',
+    //             ],
+    //             401,
+    //         );
+    //     }
+    // }
+
     public function VerifyOTP(Request $request)
     {
         $email = $request->input('email');
@@ -137,17 +168,17 @@ class UserController extends Controller
         $count = User::where('email', '=', $email)->where('otp', '=', $otp)->count();
 
         if ($count === 1) {
-            //database otp update
+            // Database OTP update
             User::where('email', '=', $email)->update(['otp' => '0']);
-            //password reset token issue
+            // Password reset token issue
             $token = JWTToken::PassResetToken($request->input('email'));
             return response()
                 ->json(
                     [
                         'status' => 'success',
-                        'message' => 'OTP varification Successfull',
+                        'message' => 'OTP verification successful',
                     ],
-                    200,
+                    200
                 )
                 ->cookie('token', $token, 60 * 24 * 30);
         } else {
@@ -155,10 +186,11 @@ class UserController extends Controller
                 [
                     'message' => 'OTP does not exist',
                 ],
-                401,
+                401
             );
         }
     }
+
 
     //password reset
     public function ResetPassword(Request $request)
@@ -184,5 +216,4 @@ class UserController extends Controller
             );
         }
     }
-
 }

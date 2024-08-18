@@ -15,9 +15,9 @@
     </div>
 </div>
 <script>
-    async function VerifyOtp(){
+    async function VerifyOtp() {
         let otp = document.getElementById('otp').value;
-        if(otp.length !== 5){
+        if (otp.length !== 5) {
             errorToast('Invalid OTP');
         } else {
             showLoader();
@@ -27,14 +27,14 @@
                     email: sessionStorage.getItem('email')
                 });
                 hideLoader();
-                if (res.status === 200 && res.data['status'] === 'success') {
-                    successToast(res.data['message']);
+                if (res.status === 200 && res.data.status === 'success') {
+                    successToast(res.data.message);
                     sessionStorage.clear();
                     setTimeout(function() {
                         window.location.href = '/reset-password';
                     }, 1000);
                 } else {
-                    errorToast(res.data['message']);
+                    errorToast(res.data.message);
                 }
             } catch (error) {
                 hideLoader();
