@@ -2,8 +2,8 @@
 //unix epoch = 1 january 1970
 //unix timespamp
 
-// echo time();
-// echo date('d/F/Y');
+echo time();
+echo date('d/F/Y');
 // echo date('d/F/y');
 // echo date('d/m/y')
 
@@ -14,6 +14,7 @@
 // printf('%10.28f', $mt);
 
 //====small time exectution programme
+/*
 $startTime = microtime(true);
 $endTime = microtime(true);
 factorial(1000);
@@ -30,3 +31,4 @@ function factorial($n){
     // echo $result;
 }
 factorial(100000);
+*/

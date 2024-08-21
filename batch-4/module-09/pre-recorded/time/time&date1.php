@@ -1,12 +1,10 @@
 <?php
 //local timezone set
-date_default_timezone_set("Asia/Dhaka");
+// date_default_timezone_set("Asia/Dhaka");
+date_default_timezone_set("UTC");
 
-//====small leter format
-// echo date('y/m/d');
-// echo date('d/m/y');
-// echo date('m/d/y'); //position changeable
-//output 24/08/20 format. sort format
+// echo date('Y-m-d | H:i:s', 0);
+echo time();
 
 //====capital leter format
 // echo date('y/M/d'); 
@@ -29,7 +27,7 @@ date_default_timezone_set("Asia/Dhaka");
 //20th August, 2024 07:15:10 AM
 
 //day count
-echo date('z'); 
+// echo date('z'); 
 // output 232
 
 //====time extends
