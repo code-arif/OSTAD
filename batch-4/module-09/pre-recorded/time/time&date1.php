@@ -1,7 +1,7 @@
 <?php
 //local timezone set
 // date_default_timezone_set("Asia/Dhaka");
-date_default_timezone_set("UTC");
+// date_default_timezone_set("UTC");
 
 // echo date('Y-m-d | H:i:s', 0);
 echo time();
