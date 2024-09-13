@@ -7,14 +7,12 @@ use App\Http\Middleware\TokenVerificationMiddleware;
 use Illuminate\Support\Facades\Route;
 
 //web API Route
-Route::post('/userRegistraion',[UserController::class,'UserRegistraion']);
+Route::post('/userRegistraion',action: [UserController::class,'UserRegistraion']);
 Route::post('/userLogin',[UserController::class,'UserLogin']);
 Route::post('/send-otp',[UserController::class,'SendOTP']);
 Route::post('/otp-verify',[UserController::class,'VerifyOTP']);
 //token verification
 Route::post('/reset-pass',[UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
-
-
 
 //page route
 Route::get('/',[HomeController::class,'index']);
