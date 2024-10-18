@@ -9,11 +9,17 @@ class DemoController extends Controller
 {
     //session create
     public function setSession(Request $request){
-        session()->put('name','John doe');
+        // session()->put('name','');
+        if (!session()->has('name') || session()->get('name') === '') {
+            session()->put('name', 'Guest');
+        }else{
+            session()->put('name', '');
+        }
+
         $request->session()->put('email', 'john@doe.com');
         session(['phone'=>'123456788']);
         Log::info('Log has been set');
-        return 'Session set';
+        return 'Session  has been set';
     }
 
     //session get
@@ -22,7 +28,7 @@ class DemoController extends Controller
         $email = $request->session()->get('email');
         $phone = session('phone');
         $age = session('age', 25);
-        return 'Name:'.$name.' Email:'.$email.' Phone:'.$phone.' Age:'.$age;
+        return 'Name:'.$name.' | Email:'.$email.'  | Phone:'.$phone.' | Age:'.$age;
     }
 
     //session get or again read

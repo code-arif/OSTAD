@@ -3,6 +3,9 @@
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\FlashController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\PracticeContoller;
+use App\Http\Controllers\RequestPutSession;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +20,18 @@ Route::get('/about',[DemoController::class,'about']);
 Route::get('/update-session',[DemoController::class,'updateSession']);
 Route::get('/delete-session',[DemoController::class,'deleteSession']);
 
+
+//multple sesssion data in put method
+Route::get('/multiple-session-put',[PracticeContoller::class,'setPutSession']);
+Route::get('/multiple-session-get',[PracticeContoller::class,'getGetSession']);
+
+//$request variable and session
+Route::get('/request-variable',[RequestPutSession::class,'requestVariable']);
+Route::get('/request-variable-get',[RequestPutSession::class,'retrieveData']);
+
+//session method
+Route::get('/session-method',[SessionController::class,'store']);
+Route::get('/session-method-get',[SessionController::class,'show']);
 
 //flash message or temporary session
 Route::get('/set-flash-message',[FlashController::class,'setFlashMessage']);
