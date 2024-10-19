@@ -4,6 +4,8 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\FlashController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\PracticeContoller;
+use App\Http\Controllers\pullAndGetController;
+use App\Http\Controllers\reFlashController;
 use App\Http\Controllers\RequestPutSession;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -33,11 +35,27 @@ Route::get('/request-variable-get',[RequestPutSession::class,'retrieveData']);
 Route::get('/session-method',[SessionController::class,'store']);
 Route::get('/session-method-get',[SessionController::class,'show']);
 
+
+//defference between pull and get
+Route::get('/set-data',[pullAndGetController::class,'setData']);
+Route::get('/get-data',[pullAndGetController::class,'getData']);
+Route::get('/pull-data',[pullAndGetController::class,'pullData']);
+
+
 //flash message or temporary session
 Route::get('/set-flash-message',[FlashController::class,'setFlashMessage']);
 Route::get('/get-flash-message',[FlashController::class,'getFlashMessage']);
 Route::get('/read-flash-message',[FlashController::class,'readFlash'])->name('flash');
 Route::get('/flash-redirect',[FlashController::class,'setFlashAndRedirect']);
+
+
+//re flash
+Route::get('/set-re-flash',[reFlashController::class,'setReFlash']);
+Route::get('/get-re-flash',[reFlashController::class,'showReFlash'])->name('show.flash');
+Route::get('/check-re-flash',[reFlashController::class,'checkReFlash']);
+
+
+
 
 //log management
 Route::get('/set-log',[LogController::class,'logManagement']);
@@ -45,3 +63,4 @@ Route::get('/set-log',[LogController::class,'logManagement']);
 
 //dos-attract protect
 Route::get('/dos-protect',[DemoController::class,'protect'])->middleware('throttle: 5, 1');
+

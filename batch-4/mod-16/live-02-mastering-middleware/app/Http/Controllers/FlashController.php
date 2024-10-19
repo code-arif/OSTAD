@@ -34,4 +34,5 @@ class FlashController extends Controller
 
         return redirect()->route('flash')->with('message', 'Hello, this is a flash message with redirect!');
     }
+
 }
