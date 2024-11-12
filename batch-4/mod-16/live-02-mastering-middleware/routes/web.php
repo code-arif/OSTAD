@@ -36,6 +36,12 @@ Route::get('/session-method',[SessionController::class,'store']);
 Route::get('/session-method-get',[SessionController::class,'show']);
 
 
+//session generate with facade
+Route::get('/set-session-facade',[DemoController::class,'sessionGenerateWithFacade']);
+Route::get('/get-session-facade',[DemoController::class,'getSessionWithFacade']);
+Route::get('/delete-session-facade',[DemoController::class,'deleteAllSessionWithFacade']);
+
+
 //defference between pull and get
 Route::get('/set-data',[pullAndGetController::class,'setData']);
 Route::get('/get-data',[pullAndGetController::class,'getData']);

@@ -14,11 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
 
         $middleware->validateCsrfTokens(except:[
-           'http://localhost:8000/userRegistraion',
-           'http://localhost:8000/userLogin',
-           'http://localhost:8000/send-otp',
-        //    'http://localhost:8000/otp-verify',
-           'http://localhost:8000/reset-pass'
+            '/*'
         ]);
 
         $middleware->alias([

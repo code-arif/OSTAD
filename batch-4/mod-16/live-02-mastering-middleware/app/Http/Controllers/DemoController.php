@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
+// use Symfony\Component\HttpFoundation\Session\Session;
 
 class DemoController extends Controller
 {
@@ -81,4 +83,35 @@ class DemoController extends Controller
             ];
         return response()->json($data);
     }
+
+
+    //session getnerate with session Facades
+    public function sessionGenerateWithFacade(Request $request){
+        Session::put('name', 'Session facade');
+        Session::put('email', 'session@facade.com');
+        Session::put([
+            'phone'=>'987654321',
+            'age'=>30
+        ]);
+        return response()->json('Session data set with facade');
+    }
+
+    public function getSessionWithFacade(){
+        //get all data
+        // $data = Session::all();
+
+        //get dat one  by one
+        $name = Session::get('name');
+        $email = Session::get('email');
+        $phone = Session::get('phone');
+        $age = Session::get('age');
+        return response()->json(['Name:'=>$name,'Email:'=>$email,'Phone:'=>$phone,'Age:'=>$age]);
+    }
+
+    //delete all data
+    public function deleteAllSessionWithFacade(){
+        Session::flush();
+        return response()->json('All session data has been deleted');
+    }
+
 }

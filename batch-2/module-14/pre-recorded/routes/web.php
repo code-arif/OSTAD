@@ -22,3 +22,7 @@ Route::get('/send-otp',[UserController::class,'showSendOTP'])->name('send.otp');
 Route::get('/verify-otp',[UserController::class,'showVerifyOTP']);
 Route::get('/reset-password',[UserController::class,'showResetPassword']);
 Route::get('/dashboard',[dashbaordController::class,'showDashboard']);
+
+Route::get('/a',function(){
+    return 'hello';
+});
