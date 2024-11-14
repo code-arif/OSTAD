@@ -1,0 +1,5 @@
+01. model naming convension
+02. model creation
+03. simple read operation with(get() and all()) methods
+04. column hidden with ($hidden property)
+05. column visible with ($visible property)
