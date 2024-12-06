@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Create</title>
+    <link rel="stylesheet" href="css/milligram.css">
+</head>
+
+<body>
+    <div id="loader" class="loading d-none">
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form action="" onsubmit="createPorduct(event)">
+                    <label>Product Name</label>
+                    <input id="ProductName" type="text">
+                    <label>Product Code</label>
+                    <input id="ProductCode" type="text">
+                    <label>Product Image</label>
+                    <input id="ProductImg" type="text">
+                    <label>Unit Price</label>
+                    <input id="UnitPrice" type="text">
+                    <label>Product Qty</label>
+                    <input id="ProductQty" type="text">
+                    <label>Product Total</label>
+                    <input id="ProductTotal" type="text">
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/axios.min.js"></script>
+
+    <script>
+        async function createPorduct(event) {
+            event.preventDefault();
+            let ProductName = document.getElementById('ProductName').value
+            let ProductCode = document.getElementById('ProductCode').value
+            let ProductImg = document.getElementById('ProductImg').value
+            let UnitPrice = document.getElementById('UnitPrice').value
+            let ProductQty = document.getElementById('ProductQty').value
+            let ProductTotal = document.getElementById('ProductTotal').value
+
+            let Obj = {
+                "Img": ProductImg,
+                "ProductCode": ProductCode,
+                "ProductName": ProductName,
+                "Qty": ProductQty,
+                "TotalPrice": ProductTotal,
+                "UnitPrice": UnitPrice
+            }
+
+            if (ProductName && ProductCode && ProductImg && UnitPrice && ProductQty && ProductTotal) {
+                let response = await axios.post('https://crud.teamrabbil.com/api/v1/CreateProduct', Obj);
+                // alert('data created successfully')
+                window.location = "index.html"
+            } else {
+                alert("Please fill all fields");
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
