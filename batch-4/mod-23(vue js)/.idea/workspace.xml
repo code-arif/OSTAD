@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c9733986-47fe-4f52-a04c-f2e6fb84a336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/live-02/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/live-02/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-02/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/live-02/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-02/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-02/src/components/TheWelcome.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-02/src/components/WelcomeItem.vue" beforeDir="false" />
+>>>>>>> 51e9f16c0e476e03c2b494657089d1dab7eece3e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -38,12 +47,29 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\admin\\AppData\\Local\\JetBrains\\WebStorm 2024.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "I:/ostad_nama/OSTAD_modules/batch-4/mod-24(vue js)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> 51e9f16c0e476e03c2b494657089d1dab7eece3e
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
       </set>
     </attachedChunks>
   </component>
@@ -56,11 +82,15 @@
       <option name="presentableId" value="Default" />
       <updated>1733627018558</updated>
       <workItem from="1733627019756" duration="3816000" />
+<<<<<<< HEAD
       <workItem from="1733661291942" duration="595000" />
       <workItem from="1733665476964" duration="678000" />
       <workItem from="1733712490372" duration="1026000" />
       <workItem from="1733795498439" duration="925000" />
       <workItem from="1733945425498" duration="19000" />
+=======
+      <workItem from="1733751907261" duration="3667000" />
+>>>>>>> 51e9f16c0e476e03c2b494657089d1dab7eece3e
     </task>
     <servers />
   </component>
