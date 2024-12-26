@@ -13,9 +13,12 @@ import { Link } from '@inertiajs/vue3'
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
+
                         <Link class="nav-item nav-link active" href="/">Home <span
                             class="sr-only">(current)</span></Link>
                         <Link class="nav-item nav-link" href="/profile">Profile</Link>
+
+
                         <a class="nav-item nav-link" href="#">Pricing</a>
                         <a class="nav-item nav-link disabled" href="#">Disabled</a>
                     </div>
