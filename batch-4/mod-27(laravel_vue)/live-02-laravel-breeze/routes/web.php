@@ -29,3 +29,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/home',[HomeController::class,'showHome'])->name('show.home');
 Route::get('/about',[HomeController::class,'showAbout'])->name('show.about');
+Route::get('/student',[HomeController::class,'showStudent'])->name('show.student');
+Route::post('/student-create',[HomeController::class,'createStudent'])->name('create.student');

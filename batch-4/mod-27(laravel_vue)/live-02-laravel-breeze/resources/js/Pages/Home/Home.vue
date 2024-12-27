@@ -2,7 +2,10 @@
 import Header from '@/Components/Header.vue';
 defineProps({
     title: String,
-    posts: Array
+    posts:{
+        type:Array,
+        default: []
+    }
 })
 // defineProps(['title'])
 
@@ -11,9 +14,6 @@ defineProps({
 
 <template>
     <Header />
-    <inertia-head>
-        <title>{{ title }}</title>
-    </inertia-head>
 
     <div class="container">
         <div class="row">
@@ -29,7 +29,7 @@ defineProps({
                     </div>
 
                     <hr>
-                    <div class="mt-5">Number Of Posts - {{ posts.length }}</div>
+                    <div class="mt-5">Number Of Posts - {{ posts.length == 0 ? 'Loading...' : posts.length }}</div>
                     <pre>
                         {{ posts }}
                     </pre>
