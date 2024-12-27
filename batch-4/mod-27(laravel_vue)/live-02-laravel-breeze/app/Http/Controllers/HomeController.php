@@ -53,9 +53,24 @@ class HomeController extends Controller
             'email' => $request->input('email'),
         ]);
 
-        return response()->json([
-            'message' => 'Student created successfully',
-            'student' => $student,
-        ],200);
+        return response()->json(
+            [
+                'message' => 'Student created successfully',
+                'student' => $student,
+            ],
+            200,
+        );
+    }
+
+    //delete student
+    public function deleteStudent(Request $request, $id)
+    {
+        $student = Student::find($id);
+        if ($student) {
+            $student->delete();
+            return response()->json([
+                'message' => 'Student deleted successfully',
+            ]);
+        }
     }
 }
