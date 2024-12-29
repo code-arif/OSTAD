@@ -17,10 +17,10 @@ import { Link } from '@inertiajs/vue3'
                         <Link class="nav-link" href="/page3">Page3</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/page4">Page4</Link>
+                        <Link class="nav-link" href="/page4" preserveScroll >Page4</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class="nav-link" href="/page5">Page5</Link>
+                        <Link class="nav-link" href="/page5" preserveScroll >Page5</Link>
                     </li>
                 </ul>
             </div>

@@ -30,4 +30,12 @@ class SiteController extends Controller
     public function page5(){
         return Inertia::render('Page5');
     }
+
+    //create store
+    public function store(Request $request){
+        // dd($request->all());
+        $data = $request->input();
+        $share_data = ['message' => "You are registared successfully", 'status' => "success", 'code' => $data];
+        return redirect()->route('page4')->with($share_data);
+    }
 }
